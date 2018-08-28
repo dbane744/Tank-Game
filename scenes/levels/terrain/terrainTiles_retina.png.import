@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/terrainTiles_retina.png-d09515e68ec3def04d92b61696b8cc6d.stex"
+path="res://.import/terrainTiles_retina.png-7b15c946af76c6590ac7e54b441ed242.stex"
 
 [deps]
 
-source_file="res://scenes/levels/arena1/assets/terrainTiles_retina.png"
-dest_files=[ "res://.import/terrainTiles_retina.png-d09515e68ec3def04d92b61696b8cc6d.stex" ]
+source_file="res://scenes/levels/terrain/terrainTiles_retina.png"
+dest_files=[ "res://.import/terrainTiles_retina.png-7b15c946af76c6590ac7e54b441ed242.stex" ]
 
 [params]
 

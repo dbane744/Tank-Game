@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="TankArena"
-run/main_scene="res://scenes/main/Main.tscn"
+run/main_scene="res://scenes/levels/arena1/Arena1.tscn"
 config/icon="res://icon.png"
 
 [display]
