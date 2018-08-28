@@ -1,24 +1,17 @@
-extends KinematicBody2D
+extends "res://entities/common/tank.gd"
 
-export (int) var speed = 200
-export (float) var rotation_speed = 1.5
-
-var velocity = Vector2()
 var rotation_dir = 0
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
+
+
+func control(delta):
+	$Turret.look_at(get_global_mouse_position())
 	
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
-
-
-func get_input():
+	
 	rotation_dir = 0
 	velocity = Vector2()
 	if Input.is_action_pressed('right'):
@@ -26,13 +19,7 @@ func get_input():
 	if Input.is_action_pressed('left'):
 		rotation_dir -= 1
 	if Input.is_action_pressed('down'):
-		velocity = Vector2(-speed, 0).rotated(rotation)
+		velocity = Vector2(-speed/2, 0).rotated(rotation)
 	if Input.is_action_pressed('up'):
 		velocity = Vector2(speed, 0).rotated(rotation)
-		
-	
-func _physics_process(delta):
-	get_input()
-	rotation += rotation_dir * rotation_speed * delta
-	move_and_slide(velocity)
-	
+	rotation += rotation_dir * tank_rotation_speed * delta

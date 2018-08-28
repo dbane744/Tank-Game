@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://TestAssets/1920x1080_image.jpg" type="Texture" id=1]
-[ext_resource path="res://entities/player/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=2]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" index="0"]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 
@@ -20,6 +20,8 @@ size_flags_vertical = 1
 texture = ExtResource( 1 )
 stretch_mode = 0
 
-[node name="PlayerTank" parent="." index="1" instance=ExtResource( 2 )]
+[node name="Player" parent="." index="1" instance=ExtResource( 2 )]
+
+speed = 200
 
 

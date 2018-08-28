@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/onlyObjects_retina_rotated.png-c405d4f78be111a04f9945ea6268cc41.stex"
 
 [deps]
 
-source_file="res://icon.png"
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+source_file="res://entities/common/assets/onlyObjects_retina_rotated.png"
+dest_files=[ "res://.import/onlyObjects_retina_rotated.png-c405d4f78be111a04f9945ea6268cc41.stex" ]
 
 [params]
 
