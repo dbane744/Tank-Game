@@ -6,8 +6,11 @@
 
 [node name="Player" instance=ExtResource( 1 )]
 
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 2 )
-speed = 100
+_sections_unfolded = [ "Collision", "Transform" ]
+speed = 300
 tank_rotation_speed = 1.0
 gun_cooldown = 0.4
 health = 100

@@ -63,4 +63,6 @@ lookahead = 4.0
 
 [node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" index="0" instance=ExtResource( 4 )]
 
+[connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
+
 
