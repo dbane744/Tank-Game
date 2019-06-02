@@ -24,7 +24,7 @@ Bullet = ExtResource( 2 )
 max_speed = null
 tank_rotation_speed = null
 gun_cooldown = null
-health = null
+max_health = null
 
 [node name="Body" type="Sprite" parent="." index="0"]
 

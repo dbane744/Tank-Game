@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/levels/arena1/Arena.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/terrain/terrain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/enemies/EnemyTank.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/enemies/EnemyBullet.tscn" type="PackedScene" id=5]
+[ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -65,6 +66,10 @@ lookahead = 4.0
 [node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" index="0" instance=ExtResource( 4 )]
 
 Bullet = ExtResource( 5 )
+
+[node name="HUD" parent="." index="3" instance=ExtResource( 6 )]
+
+[connection signal="health_changed" from="Player" to="HUD" method="update_health_bar"]
 
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
 
