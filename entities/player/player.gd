@@ -22,9 +22,9 @@ func control(delta):
 	rotation += rotation_dir * tank_rotation_speed * delta
 		
 	if Input.is_action_pressed('down'):
-		velocity = Vector2(-speed/2, 0).rotated(rotation)
+		velocity = Vector2(-max_speed/2, 0).rotated(rotation)
 	if Input.is_action_pressed('up'):
-		velocity = Vector2(speed, 0).rotated(rotation)
+		velocity = Vector2(max_speed, 0).rotated(rotation)
 	
 	if Input.is_action_pressed('left_click'):
 		shoot()

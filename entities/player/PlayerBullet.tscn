@@ -1,12 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/common/Bullets/Bullet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player/PlayerBullet.gd" type="Script" id=2]
 [ext_resource path="res://entities/common/assets/onlyObjects_retina_rotated.png" type="Texture" id=3]
 
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
 [node name="PlayerBullet" index="0" instance=ExtResource( 1 )]
 
+collision_layer = 8
+collision_mask = 5
 script = ExtResource( 2 )
+_sections_unfolded = [ "Collision" ]
 speed = 750
 damage = 10
 lifetime = 0.5
@@ -18,5 +26,11 @@ texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 388, 298, 32, 24 )
 _sections_unfolded = [ "Region", "Transform" ]
+
+[node name="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 0.0808439, -0.0546664 )
+scale = Vector2( 1.61069, 1.20448 )
+shape = SubResource( 1 )
 
 
