@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://entities/common/tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/enemies/EnemyTank.gd" type="Script" id=2]
 [ext_resource path="res://entities/common/assets/onlyObjects_retina_rotated.png" type="Texture" id=3]
+[ext_resource path="res://UI/UnitDisplay.tscn" type="PackedScene" id=4]
 
 [node name="EnemyTank" instance=ExtResource( 1 )]
 
@@ -63,6 +64,10 @@ exclude_parent = true
 cast_to = Vector2( 100, 0 )
 collision_mask = 7
 _sections_unfolded = [ "Transform" ]
+
+[node name="UnitDisplay" parent="." index="7" instance=ExtResource( 4 )]
+
+[connection signal="health_changed" from="." to="UnitDisplay" method="update_health_bar"]
 
 [connection signal="body_entered" from="DetectRadius" to="." method="_on_DetectRadius_body_entered"]
 

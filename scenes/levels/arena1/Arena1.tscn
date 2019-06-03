@@ -14,7 +14,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 62.0013, 260.001, 0, 0, -0.370955, 62.3175, 64.8763, 919.597, 0, 0, 0, 0, 142.63, 974.804, 0, 0, 44.3365, 5.71205, 1816.35, 975.47, 0, 0, 0, 0, 1855, 915.001, 0, 0, 0.790563, -58.6788, 1855.13, 257.97, 0, 0, 0, 0, 1806.41, 206.115, 0, 0, -52.027, 0.0541019, 107.474, 207.56, 0, 0, 0, 0, 62.0013, 260.001 )
 }
 
-[node name="Arena1" type="Node2D"]
+[node name="Arena1" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -54,7 +54,7 @@ curve = SubResource( 1 )
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D" index="0"]
 
 position = Vector2( 62.0013, 260.001 )
-rotation = 1.56644
+rotation = 1.56643
 offset = 0.0
 h_offset = 0.0
 v_offset = 0.0
