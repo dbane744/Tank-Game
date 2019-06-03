@@ -28,7 +28,7 @@ func shoot():
 		can_shoot = false
 		$GunTimer.start()
 		var dir = Vector2(1,0).rotated($Turret.global_rotation)
-		
+		$AnimationPlayer.play("muzzle_flash")
 		emit_signal('shoot', Bullet, $Turret/Muzzle.global_position, dir)
 
 func _physics_process(delta):
@@ -47,7 +47,13 @@ func take_damage(amount):
 	
 	
 func explode():
-	queue_free()
+	$CollisionShape2D.disabled = true
+	alive = false
+	$Turret.hide()
+	$Body.hide()
+	$Explosion.show()
+	$Explosion.play()
+	
 
 func _on_GunTimer_timeout():
 	can_shoot = true
@@ -59,3 +65,7 @@ func _on_GunTimer_timeout():
 #	pass
 
 
+
+
+func _on_Explosion_animation_finished():
+	queue_free()
