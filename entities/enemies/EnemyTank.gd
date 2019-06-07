@@ -16,12 +16,13 @@ func _ready():
 
 
 func control(delta):
-	if $LookAhead1.is_colliding() or $LookAhead2.is_colliding():
-		speed = lerp(speed, 0, 0.1) # A lower weight looks to put the value closer to the left argument
-	else:
-		speed = lerp(speed, max_speed, 0.05)
-	
 	if parent is PathFollow2D:
+		if $LookAhead1.is_colliding() or $LookAhead2.is_colliding() or $LookAhead3.is_colliding():
+			print('Speed = %s' % speed)
+			speed = lerp(speed, 0, 0.1) # A lower weight looks to put the value closer to the left argument
+		else:
+			speed = lerp(speed, max_speed, 0.05)
+			
 		parent.set_offset(parent.get_offset() + speed * delta)
 		position = Vector2()
 	else:

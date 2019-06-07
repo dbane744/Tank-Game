@@ -19,3 +19,6 @@ func _on_Tank_shoot(bullet, _position, _direction):
 	add_child(b)
 	b.start(_position, _direction)
 	
+
+func _on_Player_dead():
+	get_tree().reload_current_scene()
