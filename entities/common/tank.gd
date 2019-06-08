@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal shoot
 signal health_changed
+signal ammo_changed
 signal dead
 
 export (PackedScene) var Bullet
@@ -9,8 +10,11 @@ export (int) var max_speed
 export (float) var tank_rotation_speed
 export (float) var gun_cooldown
 export (int) var max_health
+
 export (int) var gun_shots = 1
 export (float, 0, 0.15) var gun_spread = 0.2
+export (int) var max_ammo = 20
+export (int) var ammo = -1 setget set_ammo #-1 is infinite ammo
 
 var velocity = Vector2()
 var can_shoot = true
@@ -20,13 +24,15 @@ var health
 func _ready():
 	health = max_health
 	emit_signal('health_changed', health * 100/max_health)
+	emit_signal('ammo_changed', ammo * 100/max_ammo)
 	$GunTimer.wait_time = gun_cooldown
 
 func control(delta):
 	pass
 
 func shoot(num, spread, target=null):
-	if can_shoot:
+	if can_shoot and self.ammo != 0: #will only call setget function if using self.
+		self.ammo -= 1
 		can_shoot = false
 		$GunTimer.start()
 		var dir = Vector2(1,0).rotated($Turret.global_rotation)
@@ -71,6 +77,12 @@ func explode():
 	emit_signal("dead")
 	
 
+func set_ammo(value):
+	if value > max_ammo:
+		value = max_ammo
+	ammo = value
+	emit_signal('ammo_changed', ammo * 100/max_ammo)
+
 func _on_GunTimer_timeout():
 	can_shoot = true
 
@@ -79,8 +91,6 @@ func _on_GunTimer_timeout():
 #	# Called every frame. Delta is time since last frame.
 #	# Update game logic here.
 #	pass
-
-
 
 
 func _on_Explosion_animation_finished():

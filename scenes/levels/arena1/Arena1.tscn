@@ -27,7 +27,7 @@ tile_data = PoolIntArray( -196612, 10, 0, -196611, 10, 0, -196610, 10, 0, -19660
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 780.587, 288.912 )
 max_speed = 500
-gun_shots = 5
+ammo = 5
 
 [node name="Paths" type="Node2D" parent="."]
 
@@ -56,6 +56,8 @@ position = Vector2( 1102.97, 397.884 )
 
 [node name="Pickup2" parent="Items" instance=ExtResource( 8 )]
 position = Vector2( 1026.14, 975.768 )
+type = 1
+[connection signal="ammo_changed" from="Player" to="HUD" method="update_ammo"]
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="health_changed" from="Player" to="HUD" method="update_health_bar"]
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]

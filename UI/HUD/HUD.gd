@@ -5,7 +5,9 @@ var bar_yellow = preload("res://assets/UI/barHorizontal_yellow_mid 200.png")
 var bar_green = preload("res://assets/UI/barHorizontal_green_mid 200.png")
 var bar_texture
 
-
+func update_ammo(value):
+	$Margin/Container/AmmoGauge.value = value
+	
 func update_health_bar(value):
 	bar_texture = bar_green
 	if value < 60:
@@ -22,3 +24,4 @@ func update_health_bar(value):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == 'health_bar_flash':
 		$Margin/Container/HealthBar.texture_progress = bar_texture
+
