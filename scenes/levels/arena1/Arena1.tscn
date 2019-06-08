@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/levels/arena1/Arena.gd" type="Script" id=1]
 [ext_resource path="res://scenes/levels/terrain/terrain_tiles.tres" type="TileSet" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://entities/common/Bullets/Missile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/environment/Obstacle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/environment/Pickup.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -47,6 +48,14 @@ gun_shots = 3
 
 [node name="Obstacle" parent="Obstacles" instance=ExtResource( 7 )]
 position = Vector2( 301.444, 204.573 )
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Pickup" parent="Items" instance=ExtResource( 8 )]
+position = Vector2( 1102.97, 397.884 )
+
+[node name="Pickup2" parent="Items" instance=ExtResource( 8 )]
+position = Vector2( 1026.14, 975.768 )
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="health_changed" from="Player" to="HUD" method="update_health_bar"]
 [connection signal="shoot" from="Player" to="." method="_on_Tank_shoot"]
