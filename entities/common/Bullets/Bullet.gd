@@ -33,6 +33,7 @@ func _physics_process(delta):
 
 func explode():
 	velocity = Vector2()
+	set_physics_process(false)
 	$Sprite.hide()
 	$Explosion.show()
 	$Explosion.play('smoke')

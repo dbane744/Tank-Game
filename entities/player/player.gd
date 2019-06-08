@@ -27,4 +27,4 @@ func control(delta):
 		velocity = Vector2(max_speed, 0).rotated(rotation)
 	
 	if Input.is_action_pressed('left_click'):
-		shoot()
+		shoot(gun_shots, gun_spread)

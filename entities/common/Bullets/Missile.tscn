@@ -26,8 +26,10 @@ orbit_velocity_random = 0.0
 scale_curve = SubResource( 4 )
 anim_speed = 1.0
 
-[node name="Missile" index="0" instance=ExtResource( 1 )]
+[node name="Missile" instance=ExtResource( 1 )]
 position = Vector2( 15, 0 )
+collision_layer = 8
+collision_mask = 3
 script = ExtResource( 2 )
 speed = 400
 damage = 15
@@ -39,6 +41,9 @@ texture = ExtResource( 3 )
 flip_h = true
 region_enabled = true
 region_rect = Rect2( 584, 244, 36, 16 )
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( -18.0569, -8.02336, 12.961, -8.00951, 18.0041, -3.08875, 18.0346, 2.9323, 13.1139, 7.97531, -17.9694, 8.03644 )
 
 [node name="Trail" type="Particles2D" parent="." index="4"]
 show_behind_parent = true
