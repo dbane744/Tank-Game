@@ -23,13 +23,13 @@ func _ready():
 func control(delta):
 	pass
 
-func shoot():
+func shoot(target=null):
 	if can_shoot:
 		can_shoot = false
 		$GunTimer.start()
 		var dir = Vector2(1,0).rotated($Turret.global_rotation)
 		$AnimationPlayer.play("muzzle_flash")
-		emit_signal('shoot', Bullet, $Turret/Muzzle.global_position, dir)
+		emit_signal('shoot', Bullet, $Turret/Muzzle.global_position, dir, target)
 
 func _physics_process(delta):
 	if not alive:

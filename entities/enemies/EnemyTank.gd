@@ -18,7 +18,6 @@ func _ready():
 func control(delta):
 	if parent is PathFollow2D:
 		if $LookAhead1.is_colliding() or $LookAhead2.is_colliding() or $LookAhead3.is_colliding():
-			print('Speed = %s' % speed)
 			speed = lerp(speed, 0, 0.1) # A lower weight looks to put the value closer to the left argument
 		else:
 			speed = lerp(speed, max_speed, 0.05)
@@ -35,7 +34,7 @@ func _process(delta):
 		var current_dir = Vector2(1, 0).rotated($Turret.global_rotation)
 		$Turret.global_rotation = current_dir.linear_interpolate(target_dir, turret_speed * delta).angle()
 		if target_dir.dot(current_dir) > 0.9:
-			shoot()
+			shoot(target)
 
 func _on_DetectRadius_body_entered(body):
 	target = body

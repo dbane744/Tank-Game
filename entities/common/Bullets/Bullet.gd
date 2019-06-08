@@ -3,16 +3,32 @@ extends Area2D
 export (int) var speed
 export (int) var damage
 export (float) var lifetime
+export (float) var steer_force = 0
 
 var velocity = Vector2()
+var acceleration = Vector2()
+var target = null
 
-func start(_position, _direction):
+func start(_position, _direction, _target=null):
 	position = _position
 	rotation = _direction.angle()
-	$Lifetime.wait_time = lifetime
+	#$Lifetime.wait_time = lifetime
+	$Lifetime.start(lifetime)
 	velocity = _direction * speed
+	target = _target
 	
-func _process(delta):
+	
+func seek():
+	var desired = (target.position - position).normalized() * speed
+	var steer = (desired - velocity).normalized() * steer_force
+	return steer
+	
+func _physics_process(delta):
+	if target:
+		acceleration += seek()
+		velocity += acceleration * delta
+		velocity = velocity.clamped(speed)
+		rotation = velocity.angle()
 	position += velocity * delta
 
 func explode():
