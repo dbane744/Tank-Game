@@ -57,6 +57,7 @@ __meta__ = {
 "_edit_group_": true
 }
 Bullet = ExtResource( 2 )
+offroad_friction = 0.75
 
 [node name="Body" type="Sprite" parent="."]
 

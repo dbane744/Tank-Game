@@ -19,6 +19,10 @@ config/name="TankArena"
 run/main_scene="res://scenes/levels/arena1/Arena1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GLOBALS="*res://globals.gd"
+
 [display]
 
 window/size/width=1920
