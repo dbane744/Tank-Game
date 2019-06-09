@@ -25,6 +25,7 @@ var map
 
 func _ready():
 	health = max_health
+	$Smoke.emitting = false
 	emit_signal('health_changed', health * 100/max_health)
 	emit_signal('ammo_changed', ammo * 100/max_ammo)
 	$GunTimer.wait_time = gun_cooldown
@@ -66,6 +67,8 @@ func _physics_process(delta):
 	
 func take_damage(amount):
 	health -= amount
+	if health < max_health / 2:
+		$Smoke.emitting = true
 	emit_signal('health_changed', health * 100/max_health)
 	if health <= 0:
 		explode()
@@ -74,7 +77,8 @@ func heal(amount):
 	health += amount
 	health = clamp(health, 0, max_health)
 	emit_signal('health_changed', health * 100/max_health)
-	
+	if health >= max_health / 2:
+		$Smoke.emitting = false
 	
 func explode():
 	$CollisionShape2D.disabled = true

@@ -40,6 +40,7 @@ texture_progress = ExtResource( 4 )
 [node name="Tween" type="Tween" parent="Margin/Container/HealthBar"]
 
 [node name="VSeparator" type="VSeparator" parent="Margin/Container"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 238.0
 margin_right = 268.0
 margin_bottom = 1040.0

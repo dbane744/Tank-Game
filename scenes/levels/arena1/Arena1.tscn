@@ -11,7 +11,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 62.0013, 260.001, 0, 0, -0.370955, 62.3175, 64.8763, 919.597, 0, 0, 0, 0, 142.63, 974.804, 0, 0, 44.3365, 5.71205, 1816.35, 975.47, 0, 0, 0, 0, 1855, 915.001, 0, 0, 0.790563, -58.6788, 1855.13, 257.97, 0, 0, 0, 0, 1806.41, 206.115, 0, 0, -52.027, 0.0541019, 107.474, 207.56, 0, 0, 0, 0, 62.0013, 260.001 )
+"points": PoolVector2Array( 0, 0, 0, 0, 62.0013, 260.001, 0, 0, -0.370955, 62.3175, 64.8763, 919.597, 0, 0, 0, 0, 142.63, 974.804, 0, 0, 44.3365, 5.71205, 1816.35, 975.47, 0, 0, 0, 0, 1855, 915.001, 0, 0, 0.790563, -58.6788, 1855.13, 257.97, 0, 0, 0, 0, 1806.41, 206.115, 0, 0, 0, 0, 963.477, 207.367, 0, 0, 0, 0, 840.151, 216.176, 0, 0, 0, 0, 508.345, 207.367, 52.027, -0.0541019, -52.027, 0.0541019, 107.474, 207.56, 0, 0, 0, 0, 62.0013, 260.001 )
 }
 
 [node name="Arena1" type="Node2D"]
@@ -25,13 +25,15 @@ tile_data = PoolIntArray( -196612, 10, 0, -196611, 10, 0, -196610, 10, 0, -19660
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 780.587, 288.912 )
-max_speed = 500
+max_speed = 750
+tank_rotation_speed = 1.5
 offroad_friction = 0.5
 ammo = 5
 
 [node name="Paths" type="Node2D" parent="."]
 
 [node name="Path2D" type="Path2D" parent="Paths"]
+position = Vector2( 0, 370 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Paths/Path2D"]
@@ -41,8 +43,6 @@ rotation = 1.56643
 [node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 4 )]
 Bullet = ExtResource( 5 )
 offroad_friction = 0.0
-gun_shots = 3
-detect_radius = 0
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
 

@@ -22,7 +22,7 @@ texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 268, 186, 80, 76 )
 
-[node name="Turret" parent="." index="2"]
+[node name="Turret" parent="." index="3"]
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 371, 14, 60, 24 )
