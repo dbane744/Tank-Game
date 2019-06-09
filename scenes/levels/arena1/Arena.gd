@@ -1,5 +1,7 @@
 extends Node2D
 
+var game_over = preload("res://UI/GameOver.tscn").instance()
+
 func _ready():
 	set_camera_limits()
 	Input.set_custom_mouse_cursor(load("res://assets/UI/crossair_black.png"), Input.CURSOR_ARROW, Vector2(16,16))
@@ -21,4 +23,4 @@ func _on_Tank_shoot(bullet, _position, _direction, _target=null):
 	
 
 func _on_Player_dead():
-	get_tree().reload_current_scene()
+	add_child(game_over)

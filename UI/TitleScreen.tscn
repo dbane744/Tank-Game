@@ -13,7 +13,7 @@ font_data = ExtResource( 3 )
 size = 56
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 resource_name = "PlayMessage"
 length = 1.4
 loop = true
@@ -30,8 +30,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Title"
+[sub_resource type="Animation" id=4]
 length = 1.25
 tracks/0/type = "value"
 tracks/0/path = NodePath("Title:rect_position")
@@ -46,12 +45,12 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -164 ), Vector2( 0, 426 ) ]
 }
 
-[sub_resource type="Curve2D" id=6]
+[sub_resource type="Curve2D" id=5]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -1374.94, 509.822, -72.9768, -3.97318, 72.9768, 3.97318, 2542.39, 510.366, 0, 0, 0, 0, 2624.73, 594.158, -3.61601, -59.5648, 3.61601, 59.5648, 2627.64, 1081.73, 0, 0, 0, 0, 2694.85, 1151.51, 0, 0, 0, 0, 3408.24, 1151.44, 0, 0, 0, 0, 3435.61, 1721.82, 0, 0, 0, 0, -1366.68, 1688.77, 0, 0, 0, 0, -1374.94, 509.822 )
 }
 
-[sub_resource type="Curve2D" id=5]
+[sub_resource type="Curve2D" id=6]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 318.427, 350.687, -38.8675, 0, 38.8675, 0, 1596.6, 350.804, 0, 0, 0, 0, 1630.81, 380.126, 1.02669, -42.6075, -1.02669, 42.6075, 1632.01, 892.214, 0, 0, 0, 0, 1671.92, 928.053, 0, 0, 0, 0, 1993.45, 926.951, 0, 0, 0, 0, 1982.82, -142.212, 0, 0, 0, 0, 1629.94, -142.212, 0, 0, 0, 0, 1630.17, 572.247, 38.8853, 1.25436, -38.8853, -1.25436, 1597.04, 609.772, 41.8121, 1.32038, -41.8121, -1.32038, 321.851, 607.401, 0, 0, 0, 0, 286.701, 581.751, 1.19165, 27.8051, -1.19165, -27.8051, 289.551, 378.45, 0, 0, 0, 0, 318.427, 350.687 )
 }
@@ -100,27 +99,27 @@ align = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Title"
-anims/PlayMessage = SubResource( 4 )
-anims/Title = SubResource( 3 )
+anims/PlayMessage = SubResource( 3 )
+anims/Title = SubResource( 4 )
 
 [node name="Path2D2" type="Path2D" parent="."]
 position = Vector2( 318.427, 350.687 )
 rotation = 0.000100765
 scale = Vector2( 0.5, 0.5 )
-curve = SubResource( 6 )
+curve = SubResource( 5 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D2"]
 position = Vector2( -1374.94, 509.822 )
-rotation = -0.000893356
+rotation = -0.000870051
 
 [node name="EnemyTank" parent="Path2D2/PathFollow2D" instance=ExtResource( 4 )]
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 5 )
+curve = SubResource( 6 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2( 318.427, 350.687 )
-rotation = 0.000100765
+rotation = 9.30132e-005
 
 [node name="EnemyTank" parent="Path2D/PathFollow2D" instance=ExtResource( 4 )]
 scale = Vector2( 0.5, 0.5 )

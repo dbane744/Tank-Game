@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="TankArena"
-run/main_scene="res://scenes/levels/arena1/Arena1.tscn"
+run/main_scene="res://UI/TitleScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

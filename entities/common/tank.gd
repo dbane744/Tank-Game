@@ -57,9 +57,6 @@ func _physics_process(delta):
 	control(delta)
 	if map:
 		var tile = map.get_cellv(map.world_to_map(position))
-		#print("TILE ID: %s" % tile)
-		print("World to map: %s" % map.world_to_map(position))
-		#print(position)
 		if tile in GLOBALS.slow_terrain:
 			velocity *= offroad_friction
 	move_and_slide(velocity)
@@ -81,10 +78,11 @@ func heal(amount):
 		$Smoke.emitting = false
 	
 func explode():
-	$CollisionShape2D.disabled = true
+	$CollisionShape2D.set_deferred('disabled', true) # Must defer because collision shapes cann't be disabled while physics is processing
 	alive = false
 	$Turret.hide()
 	$Body.hide()
+	$Smoke.emitting = false
 	$Explosion.show()
 	$Explosion.play()
 	emit_signal("dead")
