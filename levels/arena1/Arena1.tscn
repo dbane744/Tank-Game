@@ -1,15 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://levels/arena1/Arena.gd" type="Script" id=1]
 [ext_resource path="res://levels/terrain/terrain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://entities/enemies/EnemyTank.tscn" type="PackedScene" id=4]
-[ext_resource path="res://entities/common/Bullets/Missile.tscn" type="PackedScene" id=5]
-[ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=6]
-[ext_resource path="res://entities/environment/Obstacle.tscn" type="PackedScene" id=7]
-[ext_resource path="res://entities/environment/Pickup.tscn" type="PackedScene" id=8]
-
-
+[ext_resource path="res://entities/player/Camera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entities/enemies/EnemyTank.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/common/Bullets/Missile.tscn" type="PackedScene" id=6]
+[ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/environment/Obstacle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entities/environment/Pickup.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -32,6 +31,9 @@ tank_rotation_speed = 1.5
 offroad_friction = 0.5
 ammo = 5
 
+[node name="Camera2D" parent="." instance=ExtResource( 4 )]
+target_mode = 1
+
 [node name="Paths" type="Node2D" parent="."]
 
 [node name="Path2D" type="Path2D" parent="Paths"]
@@ -42,23 +44,24 @@ curve = SubResource( 1 )
 position = Vector2( 62.0013, 260.001 )
 rotation = 1.56643
 
-[node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 4 )]
-Bullet = ExtResource( 5 )
+[node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 5 )]
+Bullet = ExtResource( 6 )
 offroad_friction = 0.0
 
-[node name="HUD" parent="." instance=ExtResource( 6 )]
+[node name="HUD" parent="." instance=ExtResource( 7 )]
 
 [node name="Obstacles" type="Node2D" parent="."]
 
-[node name="Obstacle" parent="Obstacles" instance=ExtResource( 7 )]
+[node name="Obstacle" parent="Obstacles" instance=ExtResource( 8 )]
 position = Vector2( 301.444, 204.573 )
+type = 0
 
 [node name="Items" type="Node2D" parent="."]
 
-[node name="Pickup" parent="Items" instance=ExtResource( 8 )]
+[node name="Pickup" parent="Items" instance=ExtResource( 9 )]
 position = Vector2( 1102.97, 397.884 )
 
-[node name="Pickup2" parent="Items" instance=ExtResource( 8 )]
+[node name="Pickup2" parent="Items" instance=ExtResource( 9 )]
 position = Vector2( 1026.14, 975.768 )
 type = 1
 [connection signal="ammo_changed" from="Player" to="HUD" method="update_ammo"]
