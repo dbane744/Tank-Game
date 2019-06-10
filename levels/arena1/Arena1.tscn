@@ -1,13 +1,15 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://scenes/levels/arena1/Arena.gd" type="Script" id=1]
-[ext_resource path="res://scenes/levels/terrain/terrain_tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://levels/arena1/Arena.gd" type="Script" id=1]
+[ext_resource path="res://levels/terrain/terrain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://entities/enemies/EnemyTank.tscn" type="PackedScene" id=4]
 [ext_resource path="res://entities/common/Bullets/Missile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://entities/environment/Obstacle.tscn" type="PackedScene" id=7]
 [ext_resource path="res://entities/environment/Pickup.tscn" type="PackedScene" id=8]
+
+
 
 [sub_resource type="Curve2D" id=1]
 _data = {

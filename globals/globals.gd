@@ -2,7 +2,7 @@ extends Node
 
 var slow_terrain = [0, 10, 20, 30, 7, 8, 17, 18] # Tileset numbers in Ground
 var current_level = 0
-var levels = ["res://UI/TitleScreen.tscn", "res://scenes/levels/arena1/Arena1.tscn"]
+var levels = ["res://UI/TitleScreen.tscn", "res://levels/arena1/Arena1.tscn"]
 
 func restart():
 	current_level = 0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UI/TitleScreen.gd" type="Script" id=1]
-[ext_resource path="res://scenes/levels/terrain/terrain_tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://levels/terrain/terrain_tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://entities/enemies/EnemyTank.tscn" type="PackedScene" id=4]
 

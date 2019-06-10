@@ -5,7 +5,7 @@
 [ext_resource path="res://entities/common/assets/onlyObjects_retina_rotated.png" type="Texture" id=3]
 [ext_resource path="res://assets/onlyObjects_retina_rotated.png" type="Texture" id=4]
 
-[node name="Player" instance=ExtResource( 1 )]
+[node name="Player" index="0" instance=ExtResource( 1 )]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 2 )
@@ -19,7 +19,7 @@ texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 308, 262, 80, 84 )
 
-[node name="Turret" parent="." index="2"]
+[node name="Turret" parent="." index="3"]
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 684, 11, 60, 27 )

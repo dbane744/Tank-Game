@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GLOBALS="*res://globals.gd"
+GLOBALS="*res://globals/globals.gd"
 
 [display]
 
