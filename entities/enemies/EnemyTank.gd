@@ -41,6 +41,5 @@ func _on_DetectRadius_body_entered(body):
 
 
 func _on_DetectRadius_body_exited(body):
-	print('EXOIT')
 	if body == target:
 		target = null
