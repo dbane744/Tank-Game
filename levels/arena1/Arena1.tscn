@@ -31,6 +31,7 @@ tile_data = PoolIntArray( -196612, 10, 0, -196611, 10, 0, -196610, 10, 0, -19660
 position = Vector2( 780.587, 288.912 )
 max_speed = 750
 tank_rotation_speed = 1.5
+max_health = 1
 offroad_friction = 0.5
 ammo = 5
 

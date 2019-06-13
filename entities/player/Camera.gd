@@ -9,5 +9,5 @@ var target_node
 func _process(delta):
 	match target_mode:
 		'target_node':
-			if 'target_node':
+			if is_instance_valid(target_node):
 				global_position = target_node.global_position

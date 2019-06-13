@@ -24,7 +24,7 @@ func seek():
 	return steer
 	
 func _physics_process(delta):
-	if target:
+	if is_instance_valid(target):
 		acceleration += seek()
 		velocity += acceleration * delta
 		velocity = velocity.clamped(speed)
