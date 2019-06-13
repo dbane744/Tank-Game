@@ -25,5 +25,6 @@ func _on_Tank_shoot(bullet, _position, _direction, _target=null):
 
 func _on_Player_dead():
 	add_child(game_over)
+	#add_child_below_node($Camera2D, game_over)
 	
 
