@@ -13,6 +13,8 @@ max_speed = 400
 tank_rotation_speed = 1.0
 gun_cooldown = 0.4
 max_health = 100
+offroad_friction = 0.8
+max_ammo = -1
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 3 )
