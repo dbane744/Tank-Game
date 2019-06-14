@@ -1,6 +1,14 @@
 extends Node
 
-var slow_terrain = [0, 10, 20, 30, 7, 8, 17, 18] # Tileset numbers in Ground
+#var slow_terrain = [0, 10, 20, 30, 7, 8, 17, 18] # Tileset numbers in Ground
+#const terrain_tile_numbers = {GRASS = [0, 10, 20, 30, 7, 8, 17, 18]}
+const terrain_tiles = {GRASS = [0, 7, 8, 10, 17, 18],
+						SAND = [20, 30]}
+						
+const terrain_modifiers = {GRASS = 0.9,
+							SAND = 0.6}
+					
+
 var current_level = 0
 var levels = ["res://UI/TitleScreen.tscn", "res://UI/MainMenu.tscn", "res://levels/arena1/Arena1.tscn"]
 

@@ -57,8 +57,14 @@ func _physics_process(delta):
 	control(delta)
 	if map:
 		var tile = map.get_cellv(map.world_to_map(position))
-		if tile in GLOBALS.slow_terrain:
+		
+		if tile in GLOBALS.terrain_tiles.GRASS:
+			offroad_friction = GLOBALS.terrain_modifiers.GRASS
 			velocity *= offroad_friction
+		elif tile in GLOBALS.terrain_tiles.SAND:
+			offroad_friction = GLOBALS.terrain_modifiers.SAND
+			velocity *= offroad_friction
+		
 	move_and_slide(velocity)
 	
 	
