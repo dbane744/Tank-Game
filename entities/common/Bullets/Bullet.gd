@@ -52,3 +52,6 @@ func _on_Lifetime_timeout():
 
 func _on_Explosion_animation_finished():
 	queue_free()
+
+
+

@@ -47,6 +47,7 @@ rotation = 1.56643
 [node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 6 )]
 Bullet = ExtResource( 7 )
 offroad_friction = 0.0
+detect_radius = 5000
 
 [node name="HUD" parent="." instance=ExtResource( 8 )]
 

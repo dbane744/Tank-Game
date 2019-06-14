@@ -11,19 +11,18 @@ particles_anim_h_frames = 24
 particles_anim_v_frames = 1
 particles_anim_loop = true
 
-[sub_resource type="Curve" id=3]
+[sub_resource type="Curve" id=2]
 _data = [ Vector2( 0, 0.2184 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.5088 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=4]
-curve = SubResource( 3 )
+[sub_resource type="CurveTexture" id=3]
+curve = SubResource( 2 )
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="ParticlesMaterial" id=4]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
-angular_velocity = 0.0
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 4 )
+scale_curve = SubResource( 3 )
 anim_speed = 1.0
 
 [node name="Missile" instance=ExtResource( 1 )]
@@ -52,5 +51,5 @@ position = Vector2( -15, 0 )
 amount = 30
 lifetime = 0.4
 local_coords = false
-process_material = SubResource( 2 )
+process_material = SubResource( 4 )
 texture = ExtResource( 4 )
