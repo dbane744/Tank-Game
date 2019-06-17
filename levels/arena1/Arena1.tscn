@@ -1,15 +1,16 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://levels/arena1/Arena.gd" type="Script" id=1]
 [ext_resource path="res://UI/PauseMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://levels/terrain/terrain_tiles.tres" type="TileSet" id=3]
 [ext_resource path="res://entities/player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://entities/player/Camera.tscn" type="PackedScene" id=5]
-[ext_resource path="res://entities/enemies/EnemyTank.tscn" type="PackedScene" id=6]
-[ext_resource path="res://entities/common/Bullets/Missile.tscn" type="PackedScene" id=7]
-[ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=8]
-[ext_resource path="res://entities/environment/Obstacle.tscn" type="PackedScene" id=9]
-[ext_resource path="res://entities/environment/Pickup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://entities/common/abilities/SpeedUp.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/player/Camera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entities/enemies/EnemyTank.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entities/common/Bullets/Missile.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI/HUD/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entities/environment/Obstacle.tscn" type="PackedScene" id=10]
+[ext_resource path="res://entities/environment/Pickup.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -30,8 +31,9 @@ tile_data = PoolIntArray( -196612, 10, 0, -196611, 10, 0, -196610, 10, 0, -19660
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 780.587, 288.912 )
 max_health = 10000
+ability = ExtResource( 5 )
 
-[node name="Camera2D" parent="." instance=ExtResource( 5 )]
+[node name="Camera2D" parent="." instance=ExtResource( 6 )]
 target_mode = 1
 
 [node name="Paths" type="Node2D" parent="."]
@@ -44,25 +46,24 @@ curve = SubResource( 1 )
 position = Vector2( 62.0013, 260.001 )
 rotation = 1.56643
 
-[node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 6 )]
-Bullet = ExtResource( 7 )
+[node name="EnemyTank" parent="Paths/Path2D/PathFollow2D" instance=ExtResource( 7 )]
+Bullet = ExtResource( 8 )
 offroad_friction = 0.0
-detect_radius = 5000
 
-[node name="HUD" parent="." instance=ExtResource( 8 )]
+[node name="HUD" parent="." instance=ExtResource( 9 )]
 
 [node name="Obstacles" type="Node2D" parent="."]
 
-[node name="Obstacle" parent="Obstacles" instance=ExtResource( 9 )]
+[node name="Obstacle" parent="Obstacles" instance=ExtResource( 10 )]
 position = Vector2( 301.444, 204.573 )
 type = 0
 
 [node name="Items" type="Node2D" parent="."]
 
-[node name="Pickup" parent="Items" instance=ExtResource( 10 )]
+[node name="Pickup" parent="Items" instance=ExtResource( 11 )]
 position = Vector2( 1102.97, 397.884 )
 
-[node name="Pickup2" parent="Items" instance=ExtResource( 10 )]
+[node name="Pickup2" parent="Items" instance=ExtResource( 11 )]
 position = Vector2( 1026.14, 975.768 )
 type = 1
 [connection signal="ammo_changed" from="Player" to="HUD" method="update_ammo"]

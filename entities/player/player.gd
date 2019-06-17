@@ -1,5 +1,7 @@
 extends "res://entities/common/tank.gd"
 
+export (PackedScene) var ability
+
 var rotation_dir = 0
 
 func _ready():
@@ -28,3 +30,8 @@ func control(delta):
 	
 	if Input.is_action_pressed('left_click'):
 		shoot(gun_shots, gun_spread)
+		
+	if Input.is_action_pressed('use_ability'):
+		if ability:
+			add_child(ability.instance())
+			ability = null
