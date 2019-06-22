@@ -7,6 +7,7 @@ const terrain_tiles = {GRASS = [0, 7, 8, 10, 17, 18],
 						
 const terrain_modifiers = {GRASS = 0.9,
 							SAND = 0.6}
+						
 					
 
 var current_level = 0

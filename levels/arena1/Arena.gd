@@ -28,3 +28,12 @@ func _on_Player_dead():
 	#add_child_below_node($Camera2D, game_over)
 	
 
+
+
+func _on_Player_ability_initiated(ability, player):
+	$HUD/Margin/VBoxContainer/Ability/MarginContainer/VBoxContainer/AbilityIcon.texture = ability.icon
+	
+
+func _on_Player_ability_removed(player):
+	$HUD/Margin/VBoxContainer/Ability.reset_icon()
+	

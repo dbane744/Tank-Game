@@ -1,5 +1,6 @@
 extends "res://entities/common/abilities/Ability.gd"
 
+export (Texture) var icon
 export (int) var duration
 
 var original_speed
@@ -17,4 +18,4 @@ func activate():
 func _on_Timer_timeout():
 	parent.max_speed = original_speed
 	print('Destroying speed up')
-	queue_free()
+	destroy_ability()

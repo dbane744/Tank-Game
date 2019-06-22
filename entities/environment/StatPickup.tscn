@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://entities/environment/Pickup.gd" type="Script" id=1]
+[ext_resource path="res://entities/environment/StatPickup.gd" type="Script" id=1]
 [ext_resource path="res://assets/effects/shadow_circle.png" type="Texture" id=2]
 [ext_resource path="res://entities/common/assets/onlyObjects_retina_rotated.png" type="Texture" id=3]
 [ext_resource path="res://assets/shield_silver.png" type="Texture" id=4]
@@ -81,7 +81,7 @@ tracks/5/keys = {
 "values": [ Vector2( 1.25, 1.25 ), Vector2( 1.5, 1.5 ) ]
 }
 
-[node name="Pickup" type="Area2D"]
+[node name="StatPickup" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 1 )

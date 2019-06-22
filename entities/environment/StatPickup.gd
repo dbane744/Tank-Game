@@ -3,7 +3,8 @@ extends Area2D
 enum Items {health, ammo}
 
 var icon_textures = [preload("res://assets/shield_silver.png"),
-					 preload("res://assets/effects/ammo_machinegun.png")]
+					 preload("res://assets/effects/ammo_machinegun.png"),
+					 preload("res://assets/grey_circle.png")]
 
 export (Items) var type = Items.health
 export (Vector2) var amount = Vector2(10, 25) # Between n1 and n2

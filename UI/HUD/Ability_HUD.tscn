@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI/HUD/Ability_HUD.gd" type="Script" id=1]
+[ext_resource path="res://assets/grey_circle.png" type="Texture" id=2]
+[ext_resource path="res://assets/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[node name="Ability" type="Control"]
+script = ExtResource( 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="VBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_right = 120.0
+margin_bottom = 64.0
+
+[node name="AbilityIcon" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+margin_right = 48.0
+margin_bottom = 64.0
+texture = ExtResource( 2 )
+
+[node name="AbilityName" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_left = 52.0
+margin_top = 22.0
+margin_right = 104.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 1 )
+text = "Ability"

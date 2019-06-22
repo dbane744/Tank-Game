@@ -1,7 +1,9 @@
 extends "res://entities/common/tank.gd"
 
-export (PackedScene) var ability
+signal ability_initiated
+signal ability_removed
 
+var ability setget initiate_ability
 var rotation_dir = 0
 
 func _ready():
@@ -33,5 +35,16 @@ func control(delta):
 		
 	if Input.is_action_pressed('use_ability'):
 		if ability:
-			add_child(ability.instance())
-			ability = null
+			ability.activate()
+			remove_ability()
+			
+			
+func initiate_ability(_ability):
+	ability = _ability
+	add_child(ability)
+	emit_signal("ability_initiated", ability, self)
+	
+func remove_ability():
+	ability = null
+	emit_signal("ability_removed", self)
+	
