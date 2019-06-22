@@ -9,3 +9,4 @@ func _ready():
 	
 func reset_icon():
 	$MarginContainer/VBoxContainer/AbilityIcon.texture = no_ability_icon
+	$MarginContainer/VBoxContainer/AbilityName.text = ""

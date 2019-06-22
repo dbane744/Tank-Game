@@ -5,6 +5,7 @@ signal ability_removed
 
 var ability setget initiate_ability
 var rotation_dir = 0
+var is_sped_up = false
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
@@ -35,8 +36,9 @@ func control(delta):
 		
 	if Input.is_action_pressed('use_ability'):
 		if ability:
-			ability.activate()
-			remove_ability()
+			var was_activated_successfully = ability.activate()
+			if was_activated_successfully:
+				remove_ability()
 			
 			
 func initiate_ability(_ability):

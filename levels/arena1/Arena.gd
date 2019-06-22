@@ -32,6 +32,7 @@ func _on_Player_dead():
 
 func _on_Player_ability_initiated(ability, player):
 	$HUD/Margin/VBoxContainer/Ability/MarginContainer/VBoxContainer/AbilityIcon.texture = ability.icon
+	$HUD/Margin/VBoxContainer/Ability/MarginContainer/VBoxContainer/AbilityName.text = ability.ability_name
 	
 
 func _on_Player_ability_removed(player):
