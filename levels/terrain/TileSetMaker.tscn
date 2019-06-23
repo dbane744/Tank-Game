@@ -1,15 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://levels/terrain/TileSetMaker.gd" type="Script" id=1]
-[ext_resource path="res://levels/terrain/terrainTiles_retina.png" type="Texture" id=2]
+[ext_resource path="res://levels/terrain/tilset_objects.png" type="Texture" id=2]
 
-
-[node name="TileSetMaker" type="Node" index="0"]
-
+[node name="TileSetMaker" type="Node"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 1048.66 ],
+"_edit_vertical_guides_": [ 835.714, 128.86 ]
+}
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
-
+[node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-
-
