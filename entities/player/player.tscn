@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://entities/common/tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://entities/player/Player.gd" type="Script" id=2]
 [ext_resource path="res://entities/common/assets/onlyObjects_retina_rotated.png" type="Texture" id=3]
 [ext_resource path="res://assets/onlyObjects_retina_rotated.png" type="Texture" id=4]
+[ext_resource path="res://entities/player/SpedUpTrail.tscn" type="PackedScene" id=5]
 
 [node name="Player" instance=ExtResource( 1 )]
 position = Vector2( -8.40918, 0 )
@@ -33,3 +34,6 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 4 )
 offset = Vector2( 25, 0 )
 region_rect = Rect2( 584, 58, 56, 32 )
+
+[node name="SpedUpTrail" parent="." index="7" instance=ExtResource( 5 )]
+position = Vector2( -40, 0 )

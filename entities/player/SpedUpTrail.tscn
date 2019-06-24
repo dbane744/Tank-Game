@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.0416667, 0.141667, 0.475 )
+colors = PoolColorArray( 0.272727, 0, 0, 1, 1, 1, 0.0784314, 1, 0.375977, 0.334854, 0.334854, 0.443137 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+spread = 50.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 14.0
+initial_velocity_random = 0.3
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 1.0
+damping = 2.0
+angle = 70.0
+scale = 5.0
+color_ramp = SubResource( 2 )
+
+[node name="SpedUpTrail" type="Particles2D"]
+rotation = 3.14159
+amount = 1000
+lifetime = 12.42
+speed_scale = 17.77
+local_coords = false
+process_material = SubResource( 3 )

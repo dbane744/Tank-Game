@@ -12,7 +12,6 @@
 [ext_resource path="res://assets/explosions/explosionSmoke5.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
-
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
@@ -26,8 +25,5 @@ animations = [ {
 } ]
 
 [node name="Explosion" type="AnimatedSprite"]
-
 frames = SubResource( 1 )
 animation = "smoke"
-
-

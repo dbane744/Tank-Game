@@ -39,6 +39,11 @@ func control(delta):
 			var was_activated_successfully = ability.activate()
 			if was_activated_successfully:
 				remove_ability()
+				
+	if velocity and is_sped_up:
+		$SpedUpTrail.emitting = true
+	else:
+		$SpedUpTrail.emitting = false
 			
 			
 func initiate_ability(_ability):
