@@ -65,7 +65,7 @@ func _physics_process(delta):
 			offroad_friction = GLOBALS.terrain_modifiers.SAND
 			velocity *= offroad_friction
 		
-	move_and_slide(velocity)
+	move_and_collide(velocity * delta)
 	
 	
 func take_damage(amount):
